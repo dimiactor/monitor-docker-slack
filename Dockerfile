@@ -13,7 +13,7 @@
 ##################################################
 # Base Docker image: https://hub.docker.com/_/python/
 
-FROM python:3.6.2-jessie
+FROM python:3.8.5-alpine3.12
 
 ENV SLACK_CHANNEL ""
 ENV SLACK_TOKEN ""
@@ -23,7 +23,6 @@ ENV WHITE_LIST ""
 # seconds
 ENV CHECK_INTERVAL "300"
 
-LABEL maintainer="Denny<https://www.dennyzhang.com/contact>"
 
 USER root
 WORKDIR /
