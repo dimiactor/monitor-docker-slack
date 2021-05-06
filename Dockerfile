@@ -32,7 +32,6 @@ ADD monitor-docker-slack.sh /monitor-docker-slack.sh
 RUN chmod o+x /*.sh && chmod o+x /*.py && \
     pip install -r requirements.txt && \
 # Verify docker image
-    pip show requests-unixsocket | grep "0.1.5" && \
-    pip show slackclient | grep "1.3.0"
+    pip show requests-unixsocket | grep "0.1.5"
 
 ENTRYPOINT ["/monitor-docker-slack.sh"]
