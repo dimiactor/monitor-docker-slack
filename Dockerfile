@@ -13,25 +13,22 @@
 ##################################################
 # Base Docker image: https://hub.docker.com/_/python/
 
-FROM python:3.8.5-alpine3.12
+FROM python:latest
 
 ENV SLACK_CHANNEL ""
 ENV SLACK_TOKEN ""
 
-ENV MSG_PREFIX ""
-ENV WHITE_LIST ""
-# seconds
-ENV CHECK_INTERVAL "300"
-
-
 USER root
 WORKDIR /
+ADD requirements.txt /requirements.txt
+
+RUN pip install -r requirements.txt && \
+# Verify docker image
+    pip show requests-unixsocket | grep "0.1.5"
+
 ADD monitor-docker-slack.py /monitor-docker-slack.py
 ADD monitor-docker-slack.sh /monitor-docker-slack.sh
 
-RUN chmod o+x /*.sh && chmod o+x /*.py && \
-    pip install -r requirements.txt && \
-# Verify docker image
-    pip show requests-unixsocket | grep "0.1.5"
+RUN chmod o+x /*.sh && chmod o+x /*.py
 
 ENTRYPOINT ["/monitor-docker-slack.sh"]
