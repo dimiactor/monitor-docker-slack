@@ -1,15 +1,5 @@
-<a href="https://github.com/DennyZhang?tab=followers"><img align="right" width="200" height="183" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/fork_github.png" /></a>
-
-[![Build Status](https://travis-ci.org/dennyzhang/monitor-docker-slack.svg?branch=master)](https://travis-ci.org/dennyzhang/monitor-docker-slack) [![Docker](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/docker.png)](https://hub.docker.com/r/denny/monitor-docker-slack/)
-
-[![LinkedIn](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/linkedin_icon.png)](https://www.linkedin.com/in/dennyzhang001) [![Github](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/github.png)](https://github.com/DennyZhang) <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="http://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
-
-- File me [tickets](https://github.com/DennyZhang/monitor-docker-slack/issues) or star [the repo](https://github.com/DennyZhang/monitor-docker-slack)
-
 # Introduction
 Get Slack Notifications, When Containers Run Into Issues
-
-Read more: https://www.dennyzhang.com/docker_monitor
 
 # General Idea
 1. Start a container in the target docker host.
@@ -63,19 +53,3 @@ services:
       MSG_PREFIX: "Monitoring On XX.XX.XX.XX"
     restart: always
 ```
-
-# More customization
-- Add message prefix for the slack notification
-```
-export MSG_PREFIX="Docker Env in Denny's env"
-```
-<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/monitor-docker-slack/master/images/slack_prefix.png"/> </a>
-
-- Skip checking certain containers by customizing WHITE_LIST env.
-```
-export MSG_PREFIX="Docker Env in Denny's env"
-export WHITE_LIST="nodeexporter,ngin.*"
-```
-<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/monitor-docker-slack/master/images/slack_whitelist.png"/> </a>
-
-Code is licensed under [MIT License](https://www.dennyzhang.com/wp-content/mit_license.txt).
