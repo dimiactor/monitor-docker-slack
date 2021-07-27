@@ -1,18 +1,3 @@
-########## How To Use Docker Image ###############
-##
-##  Image Name: denny/monitor-docker-slack:latest
-##  Git link: https://github.com/DennyZhang/monitor-docker-slack/blob/master/Dockerfile
-##  Docker hub link:
-##  Build docker image: docker build --no-cache -t denny/monitor-docker-slack:latest --rm=true .
-##  How to use:
-##      https://github.com/DennyZhang/monitor-docker-slack/blob/master/README.md
-##
-##  Description: Send slack alerts, if any containers run into unhealthy
-##
-##  Read more: https://www.dennyzhang.com/docker_monitor
-##################################################
-# Base Docker image: https://hub.docker.com/_/python/
-
 FROM python:latest
 
 ENV SLACK_CHANNEL ""
