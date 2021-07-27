@@ -1,16 +1,3 @@
-#!/usr/bin/python
-# -------------------------------------------------------------------
-# @copyright 2017 DennyZhang.com
-# Licensed under MIT
-#   https://www.dennyzhang.com/wp-content/mit_license.txt
-#
-# File : monitor-docker-slack.py
-# Author : Denny <https://www.dennyzhang.com/contact>
-# Description :
-# --
-# Created : <2017-08-20>
-# Updated: Time-stamp: <2017-11-13 11:00:53>
-# -------------------------------------------------------------------
 import argparse
 import json
 import re
@@ -119,7 +106,7 @@ if __name__ == '__main__':
     requests.post(slack_webhook, data=json.dumps({'text': 'Hello Channel! I am watching now!'}))
 
     # TODO
-    slack_username = "@denny"
+    slack_username = "@D"
 
     has_send_error_alert = False
     while True:
